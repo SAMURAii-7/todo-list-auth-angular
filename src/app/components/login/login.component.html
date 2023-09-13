@@ -1,0 +1,51 @@
+<div class="container flex flex-col items-center pb-[30px]">
+    <div *ngIf="isLogin"
+        class="flex flex-col items-center mt-[50px] p-[10px] pb-[80px] bg-[#1b1b1b] rounded-[12px] w-[40rem]">
+        <h1 class="text-3xl text-yellow-600 mt-[20px]">{{title}}</h1>
+        <form class="flex flex-col justify-center items-center p-[5px] mt-[20px] w-[500px]">
+            <!-- Email -->
+            <label class="text-lg text-center text-[#e1e1e1] p-[5px]" for="text">Email</label>
+            <input class="p-[3px] ml-[5px] outline rounded-[5px]" type="text" name="title" placeholder="Enter Email"
+                [(ngModel)]="loginEmail">
+            <!-- Password -->
+            <label class="text-lg text-center text-[#e1e1e1] p-[5px]" for="text">Password</label>
+            <input class="p-[3px] ml-[5px] outline rounded-[5px]" type="password" name="title"
+                placeholder="Enter Password" [(ngModel)]="loginPassword">
+            <!-- Submit Button -->
+            <input type="submit" value="Login"
+                class="cursor-pointer bg-green-500 text-white p-[3px] mt-[10px] ml-[5px] w-[100px] rounded-[5px] hover:bg-[#328f43]"
+                (click)="onLoginSubmit()">
+        </form>
+        <p class="text-white mt-[20px]">New User?</p>
+        <input type="submit" value="Go to Register"
+            class="cursor-pointer bg-green-500 text-white p-[3px] mt-[10px] ml-[5px] w-[200px] rounded-[5px] hover:bg-[#328f43]"
+            (click)="isLogin = false">
+    </div>
+    <div *ngIf="!isLogin"
+        class="flex flex-col items-center mt-[50px] p-[10px] pb-[80px] bg-[#1b1b1b] rounded-[12px] w-[40rem]">
+        <h1 class="text-3xl text-yellow-600 mt-[20px]">{{title}}</h1>
+        <form class="flex flex-col justify-center items-center p-[5px] mt-[20px] w-[500px]">
+            <!-- Email -->
+            <label class="text-lg text-center text-[#e1e1e1] p-[5px]" for="text">Email</label>
+            <input class="p-[3px] ml-[5px] outline rounded-[5px]" type="text" name="title" placeholder="Enter Email"
+                [(ngModel)]="registerEmail">
+            <!-- Username -->
+            <label class="text-lg text-center text-[#e1e1e1] p-[5px]" for="text">Username</label>
+            <input class="p-[3px] ml-[5px] outline rounded-[5px]" type="text" name="title" placeholder="Enter Username"
+                [(ngModel)]="registerUsername">
+            <!-- Password -->
+            <label class="text-lg text-center text-[#e1e1e1] p-[5px]" for="text">Password</label>
+            <input class="p-[3px] ml-[5px] outline rounded-[5px]" type="password" name="title"
+                placeholder="Enter Password" [(ngModel)]="registerPassword">
+            <!-- Submit Button -->
+            <input type="submit" value="Register"
+                class="cursor-pointer bg-green-500 text-white p-[3px] mt-[10px] ml-[5px] w-[100px] rounded-[5px] hover:bg-[#328f43]"
+                (click)="onRegisterSubmit()">
+        </form>
+        <p class="text-white mt-[20px]">Existing User?</p>
+        <input type="submit" value="Go to Login"
+            class="cursor-pointer bg-green-500 text-white p-[3px] mt-[10px] ml-[5px] w-[200px] rounded-[5px] hover:bg-[#328f43]"
+            (click)="isLogin = true">
+
+    </div>
+</div>

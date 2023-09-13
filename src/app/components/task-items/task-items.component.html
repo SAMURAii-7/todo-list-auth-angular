@@ -1,0 +1,8 @@
+<div class="flex flex-row justify-between items-center bg-white p-[8px] mt-[8px] rounded-[5px] w-[400px]">
+    <h3 class="text-lg text-black">{{task.title}}</h3>
+    <div>
+        <fa-icon [ngStyle]="{'cursor': 'pointer'}" [icon]="faPen" (click)="handleEdit()"></fa-icon>
+        <fa-icon [ngStyle]="{'color': '#F10000', 'margin-left': '10px', 'cursor': 'pointer'}" [icon]="faTrash"
+            (click)="handleDelete()"></fa-icon>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<form class="flex justify-center items-center p-[5px] mt-[20px] w-[500px]">
+    <label class="text-lg text-center text-[#e1e1e1] p-[5px]" for="text">Task</label>
+    <input class="p-[3px] ml-[5px] outline rounded-[5px]" type="text" name="title" placeholder="Add Task"
+        [(ngModel)]="title">
+    <input *ngIf="this.taskToBeEdited.title.length <= 0" type="submit" value="Add"
+        class="cursor-pointer bg-green-500 text-white p-[3px] ml-[5px] w-[60px] rounded-[5px] hover:bg-[#328f43]"
+        (click)="onClick()">
+    <input *ngIf="this.taskToBeEdited.title.length > 0" type="submit" value="Update"
+        class="cursor-pointer bg-green-500 text-white p-[3px] ml-[5px] w-[60px] rounded-[5px] hover:bg-[#328f43]"
+        (click)="onEditClick()">
+</form>

@@ -1,0 +1,6 @@
+<app-add-task (onAddTask)="addTask($event)" (onEditTaskChange)="editTask($event)"
+    [taskToBeEdited]="taskToBeEdited"></app-add-task>
+<div class="flex flex-col justify-center items-center">
+    <app-task-items *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask(task)"
+        (onEditTask)="receiveEditTask(task)"></app-task-items>
+</div>
